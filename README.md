@@ -9,6 +9,10 @@ each framework has its own folder.
 
 2. dancer
 
+$ ./hello.pl
+
+https://metacpan.org/module/Dancer::Tutorial
+
 3. mojolicious
 
 $ morbo hello.pl
