@@ -1,0 +1,30 @@
+our ($_class_cmeta, $m, $_m_buffer, $_interp);
+BEGIN { 
+local $_interp = Mason::Interp->current_load_interp;
+$_interp->component_moose_class->import;
+$_interp->component_import_class->import;
+}
+*m = \$Mason::Request::current_request;
+*_m_buffer = \$Mason::Request::current_buffer;
+sub _inner { inner() }
+use Poet qw($conf $env :web);
+method _set_class_cmeta ($interp) {
+$_class_cmeta = $interp->component_class_meta_class->new(
+'class' => CLASS,
+'dir_path' => '/',
+'interp' => $interp,
+'is_top_level' => '1',
+'object_file' => __FILE__,
+'path' => '/index.mc',
+'source_file' => '/home/perl/Workspaces/softwares/Hello-Worlds/poet/hello/comps/index.mc',
+);
+}
+sub _unset_class_cmeta { undef $_class_cmeta }
+sub _class_cmeta { $_class_cmeta }
+method main  {
+#line 1 "/home/perl/Workspaces/softwares/Hello-Worlds/poet/hello/comps/index.mc"
+$$_m_buffer .= 'Hello World!
+';
+
+;return;
+}
