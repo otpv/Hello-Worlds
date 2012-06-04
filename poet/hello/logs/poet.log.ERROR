@@ -1,1 +1,0 @@
-[Mon May 28 22:13:49 2012] Could not load Log::Log4perl or Log::Any::Adapter::Log4perl. Install them to enable logging, or modify logging for your application (see Poet::Manual::Subclassing).
