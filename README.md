@@ -15,17 +15,33 @@ each framework has its own folder.
     
 2. dancer
     
+        $ dancer -a Hello # create skeleton of Hello app
+        $ cd Hello
+        $ script/app.pl   # run app
+    
+	http://perldancer.org/quickstart
+    
+3. dancer-lite
+
         $ ./hello.pl
     
     https://metacpan.org/module/Dancer::Tutorial
+
+4. mojolicious
     
-3. mojolicious
+        $ mojo generate app Hello # create skeleton of Hello app
+        $ morbo script/hello      # run app
+        $ morbo hello.pl
     
+    http://mojolicio.us/perldoc/Mojolicious/Guides/Growing
+    
+5. mojolicious-lite
+
         $ morbo hello.pl
     
     http://mojolicio.us
-    
-4. poet
+
+6. poet
     
         $ poet new Hello   # create skeleton of Hello app
         $ hello/bin/run.pl # run app
