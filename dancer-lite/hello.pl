@@ -2,6 +2,8 @@
 
 use Dancer;
 
-get '/' => sub { 'Hello World!' };
+get '/' => sub { 'Home Page' };
+
+get '/hello' => sub { 'Hello World!' };
 
 start;

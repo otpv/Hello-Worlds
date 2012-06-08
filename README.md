@@ -5,12 +5,14 @@ small hello world examples for some webapps running with some perl frameworks.
 
 each framework has its own folder.
 
+after running web server, reach the hello message thru /hello.
+
 1. catalyst
     
         $ catalyst.pl Hello         # create skeleton of Hello app
         $ cd Hello
         $ script/hello_server.pl -r # run app
-    
+
     https://metacpan.org/module/Catalyst::Manual::Tutorial::02_CatalystBasics
     
 2. dancer

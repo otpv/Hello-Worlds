@@ -1,14 +1,14 @@
 package Hello::Controller::Root;
+
 use Moose;
 use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller' }
 
-#
+__PACKAGE__->config(namespace => '');
+
 # Sets the actions in this controller to be registered with no prefix
 # so they function identically to actions created in MyApp.pm
-#
-__PACKAGE__->config(namespace => '');
 
 =head1 NAME
 
@@ -16,7 +16,7 @@ Hello::Controller::Root - Root Controller for Hello
 
 =head1 DESCRIPTION
 
-[enter your description here]
+Just for Hello World
 
 =head1 METHODS
 
@@ -27,10 +27,21 @@ The root page (/)
 =cut
 
 sub index :Path :Args(0) {
+    my ($self, $c) = @_;
+
+    $c->response->body($c->welcome_message);
+}
+
+=head2 hello
+
+Hello world!
+
+=cut
+
+sub hello :Global {
     my ( $self, $c ) = @_;
 
-    # Hello World
-    $c->response->body( 'Hello World!' );
+    $c->response->body('Hello World!');
 }
 
 =head2 default
@@ -40,8 +51,8 @@ Standard 404 error page
 =cut
 
 sub default :Path {
-    my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
+    my ($self, $c) = @_;
+    $c->response->body('Page not found');
     $c->response->status(404);
 }
 
@@ -55,7 +66,7 @@ sub end : ActionClass('RenderView') {}
 
 =head1 AUTHOR
 
-perl,,,
+oval
 
 =head1 LICENSE
 
@@ -65,5 +76,4 @@ it under the same terms as Perl itself.
 =cut
 
 __PACKAGE__->meta->make_immutable;
-
 1;
